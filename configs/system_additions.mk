@@ -13,6 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# init.d script support
+PRODUCT_COPY_FILES += \
+    vendor/eucos/prebuilt/bin/sysinit:system/bin/sysinit
+
+# Custom init file
+PRODUCT_COPY_FILES += \
+    vendor/eucos/prebuilt/etc/init.eucos.rc:root/init.eucos.rc
+
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/eucos/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
