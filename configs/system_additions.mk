@@ -1,5 +1,5 @@
 # Copyright (C) 2017 The Pure Nexus Project
-# Copyright (C) 2017 Euclidean OS
+# Copyright (c) 2017 Euclidean OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,22 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/eucos/configs/aosp_fixes.mk
-include vendor/eucos/configs/system_additions.mk
-include vendor/eucos/configs/version.mk
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    Stk \
-    CellBroadcastReceiver
-
-# Allow tethering without provisioning app
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
-
-# Thank you, please drive thru!
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dun.override=0
-
-# Pull in Prebuilt applications for phones
-$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
+# Backup Tool
+PRODUCT_COPY_FILES += \
+    vendor/eucos/prebuilt/bin/backuptool.sh:install/bin/backuptool.sh \
+    vendor/eucos/prebuilt/bin/backuptool.functions:install/bin/backuptool.functions \
+    vendor/eucos/prebuilt/bin/50-base.sh:system/addon.d/50-base.sh \
