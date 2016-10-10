@@ -24,3 +24,6 @@ PRODUCT_PACKAGES += \
 # Custom Packages
 PRODUCT_PACKAGES += \
     Busybox
+
+# Squisher Location
+SQUISHER_SCRIPT := vendor/eucos/tools/squisher
