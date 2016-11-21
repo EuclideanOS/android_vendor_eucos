@@ -17,6 +17,11 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/eucos/overlay/common
 
+# Use signing keys for only official nightly builds
+ifneq ($(EUCOS_BUILD_TYPE),UNOFFICIAL)
+    PRODUCT_DEFAULT_DEV_CERTIFICATE := ../.keys/releasekey
+endif
+
 # Include explicitly to work around Facelock issues
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
