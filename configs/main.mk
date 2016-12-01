@@ -17,6 +17,10 @@
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/eucos/overlay/common
 
+# Include explicitly to work around Facelock issues
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full
+
 # Custom Packages
 PRODUCT_PACKAGES += \
     Busybox
