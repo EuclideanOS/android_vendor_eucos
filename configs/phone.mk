@@ -15,6 +15,7 @@
 
 include vendor/eucos/configs/aosp_fixes.mk
 include vendor/eucos/configs/main.mk
+include vendor/eucos/configs/sdclang.mk
 include vendor/eucos/configs/system_additions.mk
 include vendor/eucos/configs/version.mk
 
