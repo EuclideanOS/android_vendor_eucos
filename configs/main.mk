@@ -32,3 +32,6 @@ PRODUCT_PACKAGES += \
 
 # Squisher Location
 SQUISHER_SCRIPT := vendor/eucos/tools/squisher
+
+# Overlay vendor extension
+-include vendor/pixel/configs/common.mk
