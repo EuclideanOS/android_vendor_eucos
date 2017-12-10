@@ -13,23 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-include vendor/eucos/configs/aosp_fixes.mk
-include vendor/eucos/configs/main.mk
-include vendor/eucos/configs/system_additions.mk
-include vendor/eucos/configs/version.mk
+# Include overlays
+PRODUCT_PACKAGE_OVERLAYS += \
+    vendor/eucos/overlay/common
 
-# Telephony packages
+# Custom Packages
 PRODUCT_PACKAGES += \
-    Stk \
-    CellBroadcastReceiver
-
-# Allow tethering without provisioning app
-PRODUCT_PROPERTY_OVERRIDES += \
-    net.tethering.noprovisioning=true
-
-# Thank you, please drive thru!
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.dun.override=0
-
-# Pull in Prebuilt applications for phones
-$(call inherit-product-if-exists, vendor/prebuilt/prebuilt.mk)
+    Busybox
